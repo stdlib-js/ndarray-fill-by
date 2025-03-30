@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-03-23)
+## Unreleased (2025-03-30)
 
 <section class="features">
 
@@ -22,6 +22,7 @@
 
 <details>
 
+-   [`7ed649e`](https://github.com/stdlib-js/stdlib/commit/7ed649eccd8436c1f34ff3583e0623e2228b9db0) - **bench:** rename files _(by Athan Reines)_
 -   [`e5d835c`](https://github.com/stdlib-js/stdlib/commit/e5d835cb9acbd4597f255246fecd52f024212fbb) - **feat:** add `ndarray/fill-by` _(by Athan Reines)_
 
 </details>
