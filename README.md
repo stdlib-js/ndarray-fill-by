@@ -41,32 +41,38 @@ limitations under the License.
 
 <!-- /.intro -->
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/ndarray-fill-by
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
--   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
+To use in Observable,
+
 ```javascript
-var fillBy = require( '@stdlib/ndarray-fill-by' );
+fillBy = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-fill-by@umd/browser.js' )
+```
+
+To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
+
+```javascript
+var fillBy = require( 'path/to/vendor/umd/ndarray-fill-by/index.js' )
+```
+
+To include the bundle in a webpage,
+
+```html
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-fill-by@umd/browser.js"></script>
+```
+
+If no recognized module system is present, access bundle contents via the global scope:
+
+```html
+<script type="text/javascript">
+(function () {
+    window.fillBy;
+})();
+</script>
 ```
 
 #### fillBy( x, fcn\[, thisArg] )
@@ -148,8 +154,13 @@ var arr = ndarray2array( y );
 
 <!-- eslint no-undef: "error" -->
 
-```javascript
-var discreteUniform = require( '@stdlib/random-base-discrete-uniform' ).factory;
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@umd/browser.js"></script>
+<script type="text/javascript">
+(function () {.factory;
 var ndarray2array = require( '@stdlib/ndarray-to-array' );
 var zeros = require( '@stdlib/ndarray-zeros' );
 var fillBy = require( '@stdlib/ndarray-fill-by' );
@@ -163,6 +174,11 @@ console.log( ndarray2array( x ) );
 // Fill the ndarray with random values:
 fillBy( x, discreteUniform( -100, 100 ) );
 console.log( ndarray2array( x ) );
+
+})();
+</script>
+</body>
+</html>
 ```
 
 </section>
@@ -255,15 +271,15 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/ndarray-fill-by/main/LICENSE
 
-[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor
+[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor/tree/umd
 
 <!-- <related-links> -->
 
-[@stdlib/ndarray/fill]: https://github.com/stdlib-js/ndarray-fill
+[@stdlib/ndarray/fill]: https://github.com/stdlib-js/ndarray-fill/tree/umd
 
-[@stdlib/ndarray/map]: https://github.com/stdlib-js/ndarray-map
+[@stdlib/ndarray/map]: https://github.com/stdlib-js/ndarray-map/tree/umd
 
-[@stdlib/ndarray/zeros]: https://github.com/stdlib-js/ndarray-zeros
+[@stdlib/ndarray/zeros]: https://github.com/stdlib-js/ndarray-zeros/tree/umd
 
 <!-- </related-links> -->
 
