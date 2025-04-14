@@ -173,6 +173,14 @@ console.log( ndarray2array( x ) );
 
 <section class="related">
 
+* * *
+
+## See Also
+
+-   <span class="package-name">[`@stdlib/ndarray-fill`][@stdlib/ndarray/fill]</span><span class="delimiter">: </span><span class="description">fill an input ndarray with a specified value.</span>
+-   <span class="package-name">[`@stdlib/ndarray-map`][@stdlib/ndarray/map]</span><span class="delimiter">: </span><span class="description">apply a callback to elements in an input ndarray and assign results to elements in a new output ndarray.</span>
+-   <span class="package-name">[`@stdlib/ndarray-zeros`][@stdlib/ndarray/zeros]</span><span class="delimiter">: </span><span class="description">create a zero-filled ndarray having a specified shape and data type.</span>
+
 </section>
 
 <!-- /.related -->
@@ -250,6 +258,12 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 [@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor
 
 <!-- <related-links> -->
+
+[@stdlib/ndarray/fill]: https://github.com/stdlib-js/ndarray-fill
+
+[@stdlib/ndarray/map]: https://github.com/stdlib-js/ndarray-map
+
+[@stdlib/ndarray/zeros]: https://github.com/stdlib-js/ndarray-zeros
 
 <!-- </related-links> -->
 
