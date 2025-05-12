@@ -33,7 +33,7 @@ limitations under the License.
 
 [![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] <!-- [![dependencies][dependencies-image]][dependencies-url] -->
 
-> Fill an input [`ndarray`][@stdlib/ndarray/ctor] according to a callback function.
+> Fill an input [ndarray][@stdlib/ndarray/ctor] according to a callback function.
 
 <section class="intro">
 
@@ -71,7 +71,7 @@ var fillBy = require( '@stdlib/ndarray-fill-by' );
 
 #### fillBy( x, fcn\[, thisArg] )
 
-Fills an input [`ndarray`][@stdlib/ndarray/ctor] according to a callback function.
+Fills an input [ndarray][@stdlib/ndarray/ctor] according to a callback function.
 
 ```javascript
 var zeros = require( '@stdlib/ndarray-zeros' );
@@ -97,7 +97,7 @@ var arr = ndarray2array( y );
 
 The function accepts the following arguments:
 
--   **x**: array-like object containing an input [`ndarray`][@stdlib/ndarray/ctor].
+-   **x**: array-like object containing an input [ndarray][@stdlib/ndarray/ctor].
 -   **fcn**: callback function.
 -   **thisArg**: callback function execution context (_optional_).
 
@@ -127,6 +127,12 @@ var arr = ndarray2array( y );
 // returns [ [ [ 10.0, 10.0 ] ], [ [ 10.0, 10.0 ] ], [ [ 10.0, 10.0 ] ] ]
 ```
 
+The callback function is provided the following arguments:
+
+-   **value**: current array element.
+-   **indices**: current array element indices.
+-   **arr**: the input [ndarray][@stdlib/ndarray/ctor].
+
 </section>
 
 <!-- /.usage -->
@@ -135,8 +141,9 @@ var arr = ndarray2array( y );
 
 ## Notes
 
--   An input [`ndarray`][@stdlib/ndarray/ctor] **must** be writable. If provided a **read-only** [`ndarray`][@stdlib/ndarray/ctor], the function throws an error.
--   The function **mutates** the input [`ndarray`][@stdlib/ndarray/ctor].
+-   An input [ndarray][@stdlib/ndarray/ctor] **must** be writable. If provided a **read-only** [ndarray][@stdlib/ndarray/ctor], the function throws an error.
+-   The function **mutates** the input [ndarray][@stdlib/ndarray/ctor].
+-   The function assumes that each element in the underlying input [ndarray][@stdlib/ndarray/ctor] data buffer has one, and only one, corresponding element in input [ndarray][@stdlib/ndarray/ctor] view (i.e., a provided [ndarray][@stdlib/ndarray/ctor] is not a broadcasted [ndarray][@stdlib/ndarray/ctor] view).
 
 </section>
 
