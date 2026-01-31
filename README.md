@@ -48,7 +48,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import fillBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-fill-by@deno/mod.js';
+import fillBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-fill-by@v0.1.0-deno/mod.js';
 ```
 
 #### fillBy( x, fcn\[, thisArg] )
@@ -141,7 +141,7 @@ The callback function is provided the following arguments:
 var discreteUniform = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform' ).factory;
 import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@deno/mod.js';
 import zeros from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-zeros@deno/mod.js';
-import fillBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-fill-by@deno/mod.js';
+import fillBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-fill-by@v0.1.0-deno/mod.js';
 
 // Create a zero-filled ndarray:
 var x = zeros( [ 5, 2 ], {
