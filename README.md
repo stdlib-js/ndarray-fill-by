@@ -41,14 +41,32 @@ limitations under the License.
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/ndarray-fill-by
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import fillBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-fill-by@esm/index.mjs';
+var fillBy = require( '@stdlib/ndarray-fill-by' );
 ```
 
 #### fillBy( x, fcn\[, thisArg] )
@@ -56,8 +74,7 @@ import fillBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-fill-by@esm/in
 Fills an input [ndarray][@stdlib/ndarray/ctor] according to a callback function.
 
 ```javascript
-import zeros from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-zeros@esm/index.mjs';
-import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
+var zeros = require( '@stdlib/ndarray-zeros' );
 
 function fcn( value ) {
     return value + 10.0;
@@ -68,13 +85,10 @@ var x = zeros( [ 3, 1, 2 ], {
 });
 
 var y = fillBy( x, fcn );
-// returns <ndarray>
+// returns <ndarray>[ [ [ 10.0, 10.0 ] ], [ [ 10.0, 10.0 ] ], [ [ 10.0, 10.0 ] ] ]
 
 var bool = ( y === x );
 // returns true
-
-var arr = ndarray2array( y );
-// returns [ [ [ 10.0, 10.0 ] ], [ [ 10.0, 10.0 ] ], [ [ 10.0, 10.0 ] ] ]
 ```
 
 The function accepts the following arguments:
@@ -88,8 +102,7 @@ To set the callback function execution context, provide a `thisArg`.
 <!-- eslint-disable no-invalid-this -->
 
 ```javascript
-import zeros from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-zeros@esm/index.mjs';
-import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
+var zeros = require( '@stdlib/ndarray-zeros' );
 
 function fcn( value ) {
     return value + this.factor;
@@ -103,10 +116,7 @@ var ctx = {
     'factor': 10.0
 };
 var y = fillBy( x, fcn, ctx );
-// returns <ndarray>
-
-var arr = ndarray2array( y );
-// returns [ [ [ 10.0, 10.0 ] ], [ [ 10.0, 10.0 ] ], [ [ 10.0, 10.0 ] ] ]
+// returns <ndarray>[ [ [ 10.0, 10.0 ] ], [ [ 10.0, 10.0 ] ], [ [ 10.0, 10.0 ] ] ]
 ```
 
 The callback function is provided the following arguments:
@@ -137,16 +147,11 @@ The callback function is provided the following arguments:
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-var discreteUniform = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform' ).factory;
-import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
-import zeros from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-zeros@esm/index.mjs';
-import fillBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-fill-by@esm/index.mjs';
+```javascript
+var discreteUniform = require( '@stdlib/random-base-discrete-uniform' ).factory;
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var zeros = require( '@stdlib/ndarray-zeros' );
+var fillBy = require( '@stdlib/ndarray-fill-by' );
 
 // Create a zero-filled ndarray:
 var x = zeros( [ 5, 2 ], {
@@ -157,10 +162,6 @@ console.log( ndarray2array( x ) );
 // Fill the ndarray with random values:
 fillBy( x, discreteUniform( -100, 100 ) );
 console.log( ndarray2array( x ) );
-
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -190,7 +191,7 @@ console.log( ndarray2array( x ) );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -253,15 +254,15 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/ndarray-fill-by/main/LICENSE
 
-[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor/tree/esm
+[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor
 
 <!-- <related-links> -->
 
-[@stdlib/ndarray/fill]: https://github.com/stdlib-js/ndarray-fill/tree/esm
+[@stdlib/ndarray/fill]: https://github.com/stdlib-js/ndarray-fill
 
-[@stdlib/ndarray/map]: https://github.com/stdlib-js/ndarray-map/tree/esm
+[@stdlib/ndarray/map]: https://github.com/stdlib-js/ndarray-map
 
-[@stdlib/ndarray/zeros]: https://github.com/stdlib-js/ndarray-zeros/tree/esm
+[@stdlib/ndarray/zeros]: https://github.com/stdlib-js/ndarray-zeros
 
 <!-- </related-links> -->
 
